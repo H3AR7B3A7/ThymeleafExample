@@ -65,7 +65,7 @@
                 <br>
                 <div class="text-input">
                     <label for="msg" class="fieldLabel" th:text="#{lbl_msg}"></label>
-                    <input type="text" th:field="*{msg}" id="msg">
+                    <textarea th:field="*{msg}" id="msg"></textarea>
                     <span th:if="${#fields.hasErrors('msg')}" th:errors="*{msg}" class="error"></span>
                     <br>
                 </div>

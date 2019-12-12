@@ -1,3 +1,8 @@
+.bg-light{
+    /*background-color: lightgray !important;*/
+    /*overschijven bootstrap klasse, ipv op id, want ook important in bootstrap*/
+}
+
 .error{
     color: red;
     font-size: 1.1em;
@@ -8,8 +13,9 @@
     width: 6rem;
 }
 
-#msg{
-    height: 6rem;
+textarea{
+    line-height: 6rem;
+    width: 100%;
 }
 
 hr.dark{
