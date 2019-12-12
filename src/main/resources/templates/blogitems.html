@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <!--    Bootstrap CSS       -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    Scripts    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <!-- My CSS & scripts -->
+    <link rel="stylesheet" th:href="@{css/housestyle.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <!--  NAVIGATION -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="logo"></a>
+                <h2>EZblog</h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="blogitems">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact">Connect</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--  BLOG FORM  -->
+        <div class="formWrapper container-fluid">
+            <h4 th:text="#{h_adventures}"></h4>
+            <form th:action="@{~/blogitems}" method="post" th:object="${nBlogItem}">
+                <div class="text-input">
+                    <label for="userName" class="fieldLabel" th:text="#{lbl_userName}"></label>
+                    <input type="text" th:field="*{userName}" id="userName">
+                    <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="error"></span>
+                </div>
+                <div class="text-input">
+                    <label for="title" class="fieldLabel" th:text="#{lbl_title}"></label>
+                    <input type="text" th:field="*{title}" id="title">
+                    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></span>
+                </div>
+                <br>
+                <div class="text-input">
+                    <label for="msg" class="fieldLabel" th:text="#{lbl_msg}"></label>
+                    <input type="text" th:field="*{msg}" id="msg">
+                    <span th:if="${#fields.hasErrors('msg')}" th:errors="*{msg}" class="error"></span>
+                    <br>
+                </div>
+                <input type="submit" class="btn" th:value="#{btn_send}">
+            </form>
+        </div>
+        <hr class="dark">
+
+        <!--   BLOG LIST   -->
+        <div class="container" id="blogItemList">
+            <div class="blogItem"
+                 th:each="blogItem, rowStat:${blogitems}"
+                 th:style="${rowStat.even} ? 'background-color: lightgrey; margin-left: 5rem;' : 'background-color: #dedede; margin-right: 5rem;'"
+                 th:styleappend="'padding-left: 2rem;'">
+                <div class="row" id="xrow">
+                    <a class="btn" th:href="@{/blogitems/delete/{id}(id = ${blogItem.id})}">x</a>
+                    <label for="blogName" class="postLabel" th:text="#{lbl_name}"></label>
+                    <p th:text="${blogItem.userName}" id="blogName"></p>
+                </div>
+                <div class="row">
+                    <label for="blogTitle" class="postLabel" th:text="#{lbl_subject}"></label>
+                    <p th:text="${blogItem.title}" id="blogTitle"></p>
+                </div>
+                <div class="row">
+                    <label for="blogMsg"></label>
+                    <p th:text="${blogItem.msg}" id="blogMsg"></p>
+                </div>
+            </div>
+        </div>
+        <!--   FOOTER   -->
+        <footer>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="copy">
+                        <hr class="light">
+                        <h5>&copy;
+                            <script>document.write(new Date().getFullYear())</script>
+                            - dDog.be
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

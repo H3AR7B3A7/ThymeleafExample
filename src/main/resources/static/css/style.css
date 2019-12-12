@@ -1,0 +1,51 @@
+.error{
+    color: red;
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.fieldLabel{
+    width: 6rem;
+}
+
+#msg{
+    height: 6rem;
+}
+
+hr.dark{
+    margin-top: 2rem;
+    width: 80%;
+}
+
+form .btn{
+    float: right;
+}
+
+.postLabel{
+    width: 4.5rem;
+}
+
+#xrow a{
+    right: 0;
+    position: absolute;
+    padding-right: 2rem;
+}
+
+#xrow {
+    position: relative;
+}
+
+.row label{
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.text-input input{
+    width: 100%;
+}
+
+#blogItemList{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+}

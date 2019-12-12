@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <!--    Bootstrap CSS       -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    Scripts    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <!--FONTAWESOME SCRIPT-->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!-- My CSS & scripts -->
+    <link rel="stylesheet" th:href="@{css/housestyle.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <!--  NAVIGATION -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="logo"></a>
+                <h2>EZblog</h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogitems">Blog</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact">Connect</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Connect -->
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <h2>Connect</h2>
+                </div>
+                <div class="col-12">
+                    Yar Pirate Ipsum
+                    Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone
+                    mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper
+                    chantey doubloon starboard grog black jack gangway rutters.
+                    Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors.
+                    Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account
+                    lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet
+                    transom heave to.
+                </div>
+                <div class="col-12 social padding">
+                    <a href="#"><em class="fab fa-facebook"></em></a>
+                    <a href="#"><em class="fab fa-twitter"></em></a>
+                    <a href="#"><em class="fab fa-google-plus-g"></em></a>
+                    <a href="#"><em class="fab fa-instagram"></em></a>
+                    <a href="#"><em class="fab fa-youtube"></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="copy">
+                    <hr class="light">
+                    <h5>&copy;
+                        <script>document.write(new Date().getFullYear())</script>
+                        - dDog.be
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
