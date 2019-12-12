@@ -81,7 +81,7 @@
                  th:style="${rowStat.even} ? 'background-color: lightgrey; margin-left: 5rem;' : 'background-color: #dedede; margin-right: 5rem;'"
                  th:styleappend="'padding-left: 2rem;'">
                 <div class="row" id="xrow">
-                    <a class="btn" th:href="@{/blogitems/delete/{id}(id = ${blogItem.id})}">x</a>
+                    <a class="btn" th:href="@{/blogitems/delete/{id}(id = ${blogItem.id})}" onclick="return confirm('Are you sure?')">x</a>
                     <label for="blogName" class="postLabel" th:text="#{lbl_name}"></label>
                     <p th:text="${blogItem.userName}" id="blogName"></p>
                 </div>
