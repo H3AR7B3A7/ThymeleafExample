@@ -1,7 +1,8 @@
 # ThymeleafExample
 Example simple internationalized web-blog using sql, spring data jpa, thymeleaf, gradle
 
-Author: dog.D.steven (H3AR7B3A7) Property of: H3AR7B3A7
+Author: dog.D.steven (H3AR7B3A7)<br>
+Property of: H3AR7B3A7
 
 This is a simple blog created using spring boot.
 The objective was to get a first experience creating something 'usefull' following our introduction to Java and Spring.
